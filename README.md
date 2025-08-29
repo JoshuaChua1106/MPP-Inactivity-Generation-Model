@@ -41,24 +41,26 @@ Inactivity simulator v2/
 ├── 🚀 run_simulation.sh                     # Main Linux/Mac runner
 ├── 🚀 run_simulation.bat                    # Main Windows runner
 ├── 📁 config/                               # Configuration files
-│   ├── PUconfig.yaml                        # Main configuration
+│   ├── PUconfig.yaml                        # Main configuration (ignored by git)
+│   ├── config_template.yaml                 # Template for new configurations
 │   └── PUconfig - Copy.yaml                # Backup configuration
 ├── 📁 scripts/                              # Python simulation scripts
 │   ├── inactivity_simulator_cleaned.py     # Core simulation engine
 │   ├── percentage_analysis.py              # Analysis & reporting
 │   └── example_config_usage.py             # Usage examples
-├── 📁 outputs/                              # Generated output files
+├── 📁 outputs/                              # Generated output files (ignored by git)
+│   ├── README_template.md                   # Template explaining output structure
 │   ├── simulated_cdb_upload.xlsx           # Assignments for CDB upload
 │   ├── simulated_monthly_summary.xlsx      # Monthly breakdown
 │   └── percentage_analysis_report.xlsx     # Detailed analysis report
-└── 📁 venv/                                 # Python virtual environment
+├── requirements.txt                          # Python dependencies
+└── 📁 venv/                                 # Python virtual environment (ignored by git)
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.7+ with pip
-- Required packages: pandas, openpyxl, pyyaml, python-dateutil, numpy
 
 ### Setup (First Time)
 1. **Create virtual environment:**
@@ -77,7 +79,7 @@ Inactivity simulator v2/
 
 3. **Install dependencies:**
    ```bash
-   pip install pandas openpyxl pyyaml python-dateutil numpy
+   pip install -r requirements.txt
    ```
 
 ### Running the Simulation
@@ -248,7 +250,7 @@ Create different config files for different scenarios:
 
 **"Virtual environment 'venv' not found"**
 ```bash
-python -m venv venv && source venv/bin/activate && pip install pandas openpyxl pyyaml python-dateutil numpy
+python -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 ```
 
 **"Config file not found"**

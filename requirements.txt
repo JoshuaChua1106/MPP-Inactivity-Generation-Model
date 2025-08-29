@@ -1,0 +1,11 @@
+# Core dependencies for MPP Inactivity Generation Model
+pandas>=1.5.0
+numpy>=1.21.0
+PyYAML>=6.0
+python-dateutil>=2.8.0
+
+# Excel file handling
+openpyxl>=3.0.0
+
+# Optional: For better performance with large datasets
+# xlsxwriter>=3.0.0
