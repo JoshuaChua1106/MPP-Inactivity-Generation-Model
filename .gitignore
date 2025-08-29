@@ -40,11 +40,11 @@ venv.bak/
 Thumbs.db
 
 # Project specific
-outputs/
+outputs/*.xlsx
+!outputs/README_template.md
 *.xlsx
-*.bat
-*.sh
 cdb_export_*.xlsx
 
 # Config files that might contain sensitive data
-config/
+config/*.yaml
+!config/config_template.yaml

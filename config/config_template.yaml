@@ -1,0 +1,90 @@
+# Inactivity Simulator Configuration Template
+# Copy this file and rename to your actual config file
+
+# Simulation Period
+simulation:
+  start_date: "2023-08"  # YYYY-MM format
+  end_date: "2026-12"    # YYYY-MM format
+  
+# Crew Configuration  
+crew:
+  rank_name: "RANK_NAME"     # Rank to simulate (PU, FA, CP, etc.)
+  actual_size: 500           # Actual crew size (auto-detected from CDB, can be overridden)
+  max_leaves_per_person: 3   # Maximum leaves per person over entire period
+  
+# CDB Export File
+cdb_file: "your_cdb_export_file.xlsx"
+
+# Leave Type Parameters
+# Format: leave_type: {rate_percent: X.X, duration_months: Y.Y, gender: 'male'/'female'/'any'}
+leave_parameters:
+  "Maternity Leave":
+    rate_percent: 5.0      # % of crew on this leave type annually
+    duration_months: 3.22  # Average duration in months
+    gender: "female"       # Gender restriction
+    max_per_person: 1      # Max occurrences per person (prevents multiple maternity)
+    
+  "Parental Leave":
+    rate_percent: 1.0      # 1% of crew on parental leave monthly
+    duration_months: "DYNAMIC"  # Calculated from parental_leave_dynamic section
+    gender: "any"          # Both genders allowed
+    max_per_person: 1      # Max occurrences per person
+    
+  "Unpaid Leave":
+    rate_percent: 0.25
+    duration_months: 1.0
+    gender: "any"
+    max_per_person: 2
+    
+  "Long Term Sick":
+    rate_percent: 2.0
+    duration_months: 2.0
+    gender: "any"
+    max_per_person: 2
+    
+  "Grounded":
+    rate_percent: 0.1
+    duration_months: 0.5
+    gender: "any"
+    max_per_person: 3
+    
+  "Rehab":
+    rate_percent: 0.2
+    duration_months: 0.46
+    gender: "any"
+    max_per_person: 2
+    
+  "Special Leave":
+    rate_percent: 0.1
+    duration_months: 0.46
+    gender: "any"
+    max_per_person: 3
+
+# Parental Leave Dynamic Configuration
+# Only adjust these 4 parameters - everything else calculates automatically:
+parental_leave_dynamic:
+  female_duration_months: 7.5       # Average duration for female parental leave
+  female_percentage: 60.0            # % of parental leaves taken by females (0-100)
+  male_duration_months: 2.0          # Average duration for male parental leave  
+  male_percentage: 40.0              # % of parental leaves taken by males (0-100)
+  # Note: female_percentage + male_percentage should = 100
+
+# Parental Leave Legacy/Advanced Rules (keep for compatibility)
+parental_leave:
+  female_duration_range: [3, 12]     # Female parental leave: 3-12 months
+  male_duration_range: [1, 3]       # Male parental leave: 1-3 months
+  female_participation_rate: 0.4    # % of maternity leaves followed by parental
+  target_monthly_on_leave: 1.0      # % of crew on parental leave monthly
+
+# Assignment Preferences
+assignment:
+  prefer_unique_people: true         # Prioritize spreading leaves across different people
+  duration_variability: 0.15        # ±15% variation in leave durations
+  monthly_variability: 0.5          # ±50% variation in monthly assignments
+  max_assignment_attempts: 300      # Max attempts to find suitable candidate
+  random_seed: 5000                 # For reproducible results
+
+# Output Files
+output:
+  assignments_file: "outputs/simulated_cdb_upload.xlsx"
+  summary_file: "outputs/simulated_monthly_summary.xlsx"
