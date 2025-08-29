@@ -96,12 +96,12 @@ run_simulation.bat config\custom.yaml        # Uses custom config
 ```
 
 The script will:
-1. ✅ Validate configuration and input files
-2. 🚀 Run the inactivity simulation
-3. 📊 Generate percentage analysis report
-4. 📋 Export all results to `outputs/` folder
+1. Validate configuration and input files
+2. Run the inactivity simulation
+3. Generate percentage analysis report
+4. Export all results to `outputs/` folder
 
-## ⚙️ Configuration
+## Configuration
 
 ### Main Configuration File: `config/PUconfig.yaml`
 
@@ -186,7 +186,7 @@ This measures **steady-state coverage** (how many people are on leave at any giv
 - 55,902 leave-days generated
 - Actual coverage: 9.05% (55,902 ÷ 617,779 × 100)
 
-## 🔧 Advanced Usage
+## Advanced Usage
 
 ### Running Individual Components
 ```bash
@@ -211,7 +211,7 @@ Create different config files for different scenarios:
 - `config/PU_high_leave.yaml` - High leave scenario
 - `config/FA_config.yaml` - Flight Attendant configuration
 
-## 📋 Leave Types Supported
+## Leave Types Supported
 
 | Leave Type | Default Rate | Duration | Gender | Description |
 |------------|--------------|----------|---------|-------------|
@@ -223,7 +223,7 @@ Create different config files for different scenarios:
 | Rehab | 0.2% | 0.46 months | Any | Rehabilitation |
 | Special Leave | 0.1% | 0.46 months | Any | Special circumstances |
 
-## 🎛️ Key Features
+## Key Features
 
 ### Constraint Satisfaction
 - **No Overlaps**: Each person can only have one active leave
