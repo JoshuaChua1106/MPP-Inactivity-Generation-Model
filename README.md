@@ -2,11 +2,11 @@
 
 A comprehensive simulation tool for generating realistic crew inactivity data (leaves, sick time, etc.) for manpower planning and resource allocation analysis.
 
-## ⚡ Quick Overview
+## Quick Overview
 
 **TL;DR:** This tool simulates crew leave assignments (maternity, parental, sick leave, etc.) that meet realistic constraints and generate accurate coverage percentages for manpower planning.
 
-### 🚀 Quickstart (3 Steps):
+### Quickstart (3 Steps):
 
 1. **Run the simulation:**
    ```bash
@@ -25,7 +25,7 @@ A comprehensive simulation tool for generating realistic crew inactivity data (l
 
 ---
 
-## 🎯 Purpose
+## Purpose
 
 This simulator generates dummy inactivity data that meets specific constraints:
 - **Even temporal distribution** - Leaves spread evenly across time periods, not clumped
@@ -33,31 +33,30 @@ This simulator generates dummy inactivity data that meets specific constraints:
 - **Fair distribution** - Leaves distributed across crew members, not concentrated on few individuals
 - **Realistic percentages** - Maintains target percentage coverage using time-weighted analysis
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Inactivity simulator v2/
-├── 📋 cdb_export_2025-07-23_11-00-32.xlsx  # Input crew data (CDB export)
-├── 🚀 run_simulation.sh                     # Main Linux/Mac runner
-├── 🚀 run_simulation.bat                    # Main Windows runner
-├── 📁 config/                               # Configuration files
+├── cdb_export_2025-07-23_11-00-32.xlsx  # Input crew data (CDB export)
+├── run_simulation.sh                     # Main Linux/Mac runner
+├── run_simulation.bat                    # Main Windows runner
+├── config/                               # Configuration files
 │   ├── PUconfig.yaml                        # Main configuration (ignored by git)
 │   ├── config_template.yaml                 # Template for new configurations
 │   └── PUconfig - Copy.yaml                # Backup configuration
-├── 📁 scripts/                              # Python simulation scripts
+├── scripts/                              # Python simulation scripts
 │   ├── inactivity_simulator_cleaned.py     # Core simulation engine
 │   ├── percentage_analysis.py              # Analysis & reporting
 │   └── example_config_usage.py             # Usage examples
-├── 📁 outputs/                              # Generated output files (ignored by git)
+├── outputs/                              # Generated output files (ignored by git)
 │   ├── README_template.md                   # Template explaining output structure
 │   ├── simulated_cdb_upload.xlsx           # Assignments for CDB upload
 │   ├── simulated_monthly_summary.xlsx      # Monthly breakdown
 │   └── percentage_analysis_report.xlsx     # Detailed analysis report
 ├── requirements.txt                          # Python dependencies
-└── 📁 venv/                                 # Python virtual environment (ignored by git)
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.7+ with pip
@@ -131,7 +130,7 @@ leave_parameters:
     max_per_person: 1      # Max occurrences per person
 ```
 
-### 🎯 Dynamic Parental Leave Configuration
+### Dynamic Parental Leave Configuration
 
 **Simple 4-Parameter Setup** - Only adjust these values:
 
@@ -144,12 +143,12 @@ parental_leave_dynamic:
 ```
 
 **What Happens Automatically:**
-- ✅ Weighted duration calculated: `(60% × 7.5) + (40% × 2.0) = 5.3 months`
-- ✅ Gender split ratios updated: `[0.60, 0.40]`
-- ✅ Assignment logic updated with dynamic values
-- ✅ Percentage analysis uses correct weighted averages
+- Weighted duration calculated: `(60% × 7.5) + (40% × 2.0) = 5.3 months`
+- Gender split ratios updated: `[0.60, 0.40]`
+- Assignment logic updated with dynamic values
+- Percentage analysis uses correct weighted averages
 
-## 📊 Output Files
+## Output Files
 
 ### 1. `outputs/simulated_cdb_upload.xlsx`
 Ready-to-upload assignments with columns:
@@ -171,7 +170,7 @@ Comprehensive analysis with multiple sheets:
 - **Detailed_Assignments** - Full assignment list with durations
 - **Configuration** - Simulation parameters used
 
-## 📈 Analysis Method
+## Analysis Method
 
 ### Time-Weighted Coverage Calculation
 The simulator uses **time-weighted analysis** to measure leave coverage:
@@ -226,25 +225,25 @@ Create different config files for different scenarios:
 
 ## 🎛️ Key Features
 
-### ✅ Constraint Satisfaction
+### Constraint Satisfaction
 - **No Overlaps**: Each person can only have one active leave
 - **Even Distribution**: Leaves spread evenly across time periods
 - **Fair Assignment**: Uses Monte Carlo approach for realistic distribution
 - **Gender Compliance**: Respects gender restrictions for specific leave types
 
-### ✅ Dynamic Configuration
+### Dynamic Configuration
 - **Real-time Calculation**: Parameters calculated at startup
 - **Input Validation**: Warns about configuration issues
 - **Backward Compatibility**: Legacy config sections preserved
 - **Flexible Scenarios**: Easy parameter adjustments
 
-### ✅ Professional Output
+### Professional Output
 - **Excel Integration**: Ready-to-import XLSX files
 - **Multi-sheet Reports**: Comprehensive analysis breakdowns
 - **Time-series Data**: Monthly summaries and trends
 - **Audit Trail**: Configuration parameters saved with results
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -266,13 +265,13 @@ python -m venv venv && source venv/bin/activate && pip install -r requirements.t
 - Reduce leave rates if over-constrained
 - Check for conflicting constraints
 
-## 📝 Version History
+## Version History
 
 - **v2.0** - Dynamic parental leave configuration, organized file structure
 - **v1.5** - Time-weighted percentage analysis, automated pipeline
 - **v1.0** - Initial simplified assignment algorithm
 
-## 🤝 Contributing
+## Contributing
 
 For modifications or enhancements:
 1. Test changes with different configurations
@@ -280,7 +279,7 @@ For modifications or enhancements:
 3. Ensure cross-platform compatibility (Linux/Windows)
 4. Update documentation as needed
 
-## 📄 License
+## License
 
 Internal tool for WePlan manpower planning operations.
 
